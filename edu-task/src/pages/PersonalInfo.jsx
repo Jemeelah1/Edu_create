@@ -21,7 +21,13 @@ const PersonalInfo = () => {
   const [formData, setFormData] = useState(loadFormData());
   const [errors, setErrors] = useState({});
 
-  // Update localStorage whenever formData changes
+  useEffect(() => {
+    return () => {
+      localStorage.removeItem("personalInfo");
+    };
+  }, []);
+
+  // Update localStorage
   useEffect(() => {
     localStorage.setItem("personalInfo", JSON.stringify(formData));
   }, [formData]);

@@ -23,7 +23,7 @@ const Address = () => {
   const [formData, setFormData] = useState(loadFormData());
   const [errors, setErrors] = useState({});
 
-  // Update localStorage whenever formData changes
+  // Update localStorage
   useEffect(() => {
     localStorage.setItem("formData", JSON.stringify(formData));
   }, [formData]);

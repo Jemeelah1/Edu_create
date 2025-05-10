@@ -18,16 +18,14 @@ function App() {
   return (
     <div className="container" style={{ marginTop: "8rem" }}>
       {showLayout ? (
-        <div className="position-relative">
+        <>
           {/* TabBar */}
-          <div className="position-absolute top-0 start-0 translate-middle-y">
+          <div className="d-flex justify-content-start">
             <TabBar />
           </div>
-          {/* Card content */}
-          <div
-            className="card border rounded-4 shadow-lg mt-4"
-            style={{ marginTop: "8rem" }}
-          >
+
+          {/* Card Content */}
+          <div className="card border rounded-4 shadow-lg">
             <div className="card-body">
               <Routes>
                 <Route path="/" element={<PersonalInfo />} />
@@ -37,7 +35,7 @@ function App() {
               </Routes>
             </div>
           </div>
-        </div>
+        </>
       ) : (
         <Routes>
           <Route

@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Success = () => {
   const navigate = useNavigate();
 
-  const handleGoHome = () => {
+  useEffect(() => {
     localStorage.removeItem("formData");
+  }, []);
+
+  const handleGoHome = () => {
     navigate("/");
   };
 
